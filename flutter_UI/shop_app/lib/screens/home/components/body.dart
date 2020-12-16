@@ -5,6 +5,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPanddin),
@@ -44,10 +45,23 @@ class _CategoriesState extends State<Categories> {
 
   Widget buildCategory(int index) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: kDefaultPanddin),
-        child: Text(
-          categories[index],
-          style: TextStyle(fontWeight: FontWeight.bold,
-          color: kTextColor),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              categories[index],
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: selectedIndex == index ? kTextColor : kTextLightColor,
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: kDefaultPanddin / 4),
+              height: 2,
+              width: 30,
+              color: selectedIndex == index ? Colors.black : Colors.transparent,
+            )
+          ],
         ),
       );
 }
