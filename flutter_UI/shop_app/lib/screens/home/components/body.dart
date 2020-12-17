@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/models/Product.dart';
+import 'package:shop_app/screens/details/details_screen.dart';
 
 import 'categories.dart';
+import 'item_card.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -34,7 +36,9 @@ class Body extends StatelessWidget {
                 childAspectRatio: 0.75,
               ),
               itemBuilder: (context, index) => ItemCard(
-                product: products[index],
+                product: products[index], press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsScreen(
+                  product: products[index],
+                )))
               ),
             ),
           ),
@@ -44,46 +48,6 @@ class Body extends StatelessWidget {
   }
 }
 
-class ItemCard extends StatelessWidget {
-  final Product product;
-  final Function press;
 
-  const ItemCard({
-    Key key,
-    this.product,
-    this.press,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Expanded(
-            child: Container(
-            padding: EdgeInsets.all(kDefaultPanddin),
-            //they just want to demo, we dont need them no more
-            // height: 100,
-            // width: 160,
-            decoration: BoxDecoration(
-              color: product.color,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: Image.asset(product.image),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: kDefaultPanddin / 4),
-          child: Text(
-            product.title,
-            style: TextStyle(color: kTextLightColor),
-          ),
-        ),
-        Text(
-          "\$${product.price}",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        )
-      ],
-    );
-  }
-}
+
