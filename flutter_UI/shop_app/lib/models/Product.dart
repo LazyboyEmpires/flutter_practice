@@ -18,7 +18,7 @@ class Product {
 List<Product> products = [
   Product(
       id: 1,
-      title: "LazyboyEmpires",
+      title: "Office Code",
       price: 234,
       size: 12,
       description: dummyText,
@@ -50,7 +50,7 @@ List<Product> products = [
       color: Color(0xFFE6B398)),
   Product(
       id: 5,
-      title: "LazyboyEmpires",
+      title: "Office Code",
       price: 234,
       size: 12,
       description: dummyText,
@@ -58,7 +58,7 @@ List<Product> products = [
       color: Color(0xFFFB7883)),
   Product(
     id: 6,
-    title: "LazyboyEmpires",
+    title: "Office Code",
     price: 234,
     size: 12,
     description: dummyText,

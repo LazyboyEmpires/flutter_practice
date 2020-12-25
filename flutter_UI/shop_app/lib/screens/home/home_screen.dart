@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/constants.dart';
-
-import 'components/body.dart';
+import 'package:shop_app/screens/home/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -25,6 +24,7 @@ class HomeScreen extends StatelessWidget {
         IconButton(
           icon: SvgPicture.asset(
             "assets/icons/search.svg",
+            // By default our  icon color is white
             color: kTextColor,
           ),
           onPressed: () {},
@@ -32,11 +32,12 @@ class HomeScreen extends StatelessWidget {
         IconButton(
           icon: SvgPicture.asset(
             "assets/icons/cart.svg",
+            // By default our  icon color is white
             color: kTextColor,
           ),
           onPressed: () {},
         ),
-        SizedBox(width: kDefaultPanddin / 2)
+        SizedBox(width: kDefaultPaddin / 2)
       ],
     );
   }

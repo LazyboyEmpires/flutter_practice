@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/constants.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:shop_app/models/Product.dart';
-import 'package:shop_app/screens/home/components/body.dart';
+import 'package:shop_app/screens/details/components/body.dart';
+
+import '../../constants.dart';
 
 class DetailsScreen extends StatelessWidget {
   final Product product;
+
   const DetailsScreen({Key key, this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //each product have a color
+      // each product have a color
       backgroundColor: product.color,
       appBar: buildAppBar(context),
-      body: Body(),
+      body: Body(product: product),
     );
   }
 
@@ -37,9 +39,7 @@ class DetailsScreen extends StatelessWidget {
           icon: SvgPicture.asset("assets/icons/cart.svg"),
           onPressed: () {},
         ),
-        SizedBox(
-          width: kDefaultPanddin / 2,
-        )
+        SizedBox(width: kDefaultPaddin / 2)
       ],
     );
   }
