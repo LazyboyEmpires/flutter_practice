@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workspace/common/common.dart';
+import 'components/makeitem.dart';
 import 'exercisegrid.dart';
 
 class HomePage extends StatefulWidget {
@@ -156,17 +157,30 @@ class _HomePageState extends State<HomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        makeItem(
-                            image: 'assets/images/image.png',
-                            title: 'Full Body Work Out'),
-                        makeItem(
-                            image: 'assets/images/image.png',
-                            title: 'Shoulder, Arms'),
-                        makeItem(
-                            image: 'assets/images/image.png',
-                            title: 'Chest, Abs'),
-                        makeItem(
-                            image: 'assets/images/image.png', title: 'Legs')
+                        GestureDetector(
+                          onTap: () {
+                          },
+                          child: makeItem(
+                              image: 'assets/images/image.png',
+                              title: 'Full Body Work Out'),
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: makeItem(
+                              image: 'assets/images/image.png',
+                              title: 'Shoulder, Arms'),
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: makeItem(
+                              image: 'assets/images/image.png',
+                              title: 'Chest, Abs'),
+                        ),
+                        GestureDetector(
+                          onTap: () {},
+                          child: makeItem(
+                              image: 'assets/images/image.png', title: 'Legs'),
+                        )
                       ],
                     ),
                   ),
@@ -188,9 +202,9 @@ class _HomePageState extends State<HomePage> {
         height: 4,
         margin: EdgeInsets.only(right: 5),
         decoration: BoxDecoration(
-            color: isActive ? Colors.grey[800] : Colors.white,
-            borderRadius: BorderRadius.circular(50),
-            ),
+          color: isActive ? Colors.grey[800] : Colors.white,
+          borderRadius: BorderRadius.circular(50),
+        ),
       ),
     );
   }
@@ -205,34 +219,5 @@ class _HomePageState extends State<HomePage> {
       }
     }
     return indicator;
-  }
-
-  Widget makeItem({image, title}) {
-    return AspectRatio(
-      aspectRatio: 1 / 1,
-      child: Container(
-        margin: EdgeInsets.only(right: 15),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            image:
-                DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
-        child: Container(
-          padding: EdgeInsets.all(20),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(begin: Alignment.bottomRight, colors: [
-                Colors.black.withOpacity(.8),
-                Colors.black.withOpacity(.2),
-              ])),
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              title,
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-          ),
-        ),
-      ),
-    );
   }
 }
