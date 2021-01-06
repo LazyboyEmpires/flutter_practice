@@ -112,7 +112,7 @@ class ItemCard extends StatelessWidget {
               ),
             ),
             Text(
-              "\$${exercises.sett}",
+              exercises.sett,
             )
           ],
         ),

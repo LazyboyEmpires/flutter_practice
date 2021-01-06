@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 Widget makeItem({image, title}) {
-    return AspectRatio(
+  return GestureDetector(
+    onTap: () {
+      
+    },
+    child: AspectRatio(
       aspectRatio: 1 / 1,
       child: Container(
         margin: EdgeInsets.only(right: 15),
@@ -26,6 +30,6 @@ Widget makeItem({image, title}) {
           ),
         ),
       ),
-    );
-  }
-
+    ),
+  );
+}

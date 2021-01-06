@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Porpular Training", style: kFontChildTitle),
+                      Text("Popular Training", style: kFontChildTitle),
                       GestureDetector(
                         child: Text('View All', style: kViewAll),
                         onTap: () {
