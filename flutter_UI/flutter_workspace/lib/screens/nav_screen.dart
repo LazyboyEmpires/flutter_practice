@@ -3,6 +3,8 @@ import 'package:flutter_workspace/screens/home.dart';
 import 'package:flutter_workspace/widgets/custom_tab_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import 'galery.dart';
+
 class NavScreen extends StatefulWidget {
   @override
   _NavScreenState createState() => _NavScreenState();
@@ -11,14 +13,14 @@ class NavScreen extends StatefulWidget {
 class _NavScreenState extends State<NavScreen> {
   final List<Widget> _screens = [
     HomePage(),
-    Scaffold(),
+    Categories(),
     Scaffold(),
     Scaffold(),
   ];
   final List<IconData> _icons = const [
-    FontAwesomeIcons.home,
-    FontAwesomeIcons.businessTime,
-    FontAwesomeIcons.heart,
+    Icons.home_filled,
+    FontAwesomeIcons.listAlt,
+    Icons.favorite,
     FontAwesomeIcons.user,
   ];
   int _selectedIndex = 0;

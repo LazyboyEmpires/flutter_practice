@@ -18,9 +18,8 @@ class CustomTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       height: 55.0,
-          child: TabBar(
+      child: TabBar(
         indicatorPadding: EdgeInsets.zero,
         tabs: icons
             .asMap()
@@ -34,14 +33,11 @@ class CustomTabBar extends StatelessWidget {
                           : Colors.black45,
                       size: 20.0,
                     ),
-                    child: Text('home',
-                    style: TextStyle(color: Colors.black),),
                   ),
                 ))
             .values
             .toList(),
         onTap: onTap,
-        
       ),
     );
   }
